@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?> <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration> <!--设置连接数据库的环境-->
+
+    <!--    MyBtatis 核心配置文件中的标签必须要按照指定的顺序配置-->
+    <!--    The content of element type "configuration" must match
+    "(properties?,settings?,typeAliases?,typeHandlers?,objectFactory?,
+    objectWrapperFactory?,reflectorFactory?,plugins?,environments?,databaseIdProvider?,mappers?)"-->
+
+
+<!--    &lt;!&ndash;    引入properties文件，此后就可在当前文件中使用 来访问 value &ndash;&gt;-->
+<!--    <properties resource="jdbc.properties"/>-->
+
+    <settings>
+        <!--        将下划线映射为驼峰-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--    设置类型别名：即为某个具体的类型，设置一个别名
+在MyBatis的范围中就可以使用别名表示一个具体的类型
+        -->
+<!--    <typeAliases>-->
+<!--        <package name=""/>-->
+<!--    </typeAliases>-->
+
+
+<!--    <environments default="development">-->
+
+<!--        <environment id="development">-->
+
+<!--            <transactionManager type="JDBC"/>-->
+
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="${jdbc.driver}"/>-->
+<!--                <property name="url" value="${jdbc.url}"/>-->
+<!--                <property name="username" value="${jdbc.username}"/>-->
+<!--                <property name="password" value="${jdbc.password}"/>-->
+<!--            </dataSource>-->
+<!--        </environment>-->
+
+<!--    </environments>-->
+
+
+    <!--    引入mybatis的映射文件-->
+<!--    <mappers>-->
+<!--        <package name=""/>-->
+<!--    </mappers>-->
+
+    <plugins>
+<!--        配置分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+</configuration>
